@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="ui relaxed divided list">
-            <div class="item" v-for="post in posts">
+            <div class="item" v-for="post in parsedPosts">
                 <i class="fa fa-handshake-o"></i>
                 <div class="content">
-
+                        {{post.contents}}
                 </div>
             </div>
         </div>
@@ -15,22 +15,18 @@
 
 module.exports = { // This is important, I got errors when using `export default`
      props:[
-        // 'posts'
+        'posts'
     ],
     data () {
         return {
-           posts: [
-               1,
-               2,
-               3,
-               4,
-               5,
-               6
-           ] 
+        }
+    },
+    computed: {
+        parsedPosts: function() {
+            return JSON.parse(this.posts);
         }
     },
     created() {
-        console.log(this.posts)
     }
 }
 </script>

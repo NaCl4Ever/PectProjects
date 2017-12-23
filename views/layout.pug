@@ -5,7 +5,10 @@ html
     link(rel='stylesheet', href='/assets/semantic/dist/semantic.min.css')
     link(rel='stylesheet', href='/node/font-awesome/css/font-awesome.min.css')
   body
-    #app
+    div(class="ui sidebar inverted vertical menu")
+        a(class="item" href="/") Home
+        a(class="item" href="/posts") Posts
+    #app(class="dimmed pusher")
       app-header
       block content
     script(src="/javascripts/bundle.js")
