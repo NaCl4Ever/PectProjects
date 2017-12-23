@@ -17,12 +17,9 @@ if(pass)
     config.password = pass;
 const pool = new Pool(config);
 //A simple fetch all, with limit and offset so we can paginate
-DataInterface.prototype.getPosts = function ( limit = 'ALL', offset=0 ) {
-    console.log(`Offset: ${offset} Limit: ${Limit}`);
-    pool.query('SELECT * FROM posts [LIMIT $1] [OFFSET $2]', [limit, offset]  , (err, res) => {
-        console.dir(res.rows);
-        pool.end();
-        return (err, res);
+DataInterface.prototype.getPosts = function (callback, limit=10, offset=0 ) {
+    pool.query('SELECT * FROM posts LIMIT $1 OFFSET $2', [limit, offset]  , (err, res) => {
+        callback(err, res);
     })    
 }
 
