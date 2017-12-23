@@ -2,8 +2,12 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/assets/semantic/dist/semantic.min.css')
   body
     #app
+      app-header
       block content
     script(src="/javascripts/bundle.js")
+    script(src="/node/jquery/dist/jquery.min.js")
+    script(src="/assets/semantic/dist/semantic.min.js")
+
