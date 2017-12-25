@@ -7,7 +7,11 @@ Vue.filter('date', function (value) {
     if (!value) return ''
     value = new Date(value);
     return value.toISOString().slice(0, 10);
-})
+});
+Vue.filter('snip', function (value, length) {
+    if (!value) return ''
+    return value.split(" ").slice(0,length).join(" ");
+});
 const app = new Vue({
     el: '#app'
 })

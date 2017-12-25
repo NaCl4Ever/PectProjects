@@ -7,12 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('pectprojects:server');
 var http = require('http');
-
+const env = require('dotenv').config().parsed;
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(env.PORT || '3000');
 app.set('port', port);
 
 /**

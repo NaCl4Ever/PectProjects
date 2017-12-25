@@ -15,6 +15,17 @@ router.get('/', function (req, res, next) {
   }, 15, 0);
 
 });
+router.get('/latest', function (req, res, next) {
+  Service.getLatest((err, data) => {
+    console.dir(data);
+    res.render('posts_show',
+      {
+        title: 'Pect Projects',
+        data: data.rows
+      });
+  });
+
+});
 router.get('/:postId', function (req, res, next) {
   Service.getPost((err, data) => {
     console.dir(data.rows);
@@ -26,6 +37,7 @@ router.get('/:postId', function (req, res, next) {
   }, req.params.postId);
 
 });
+
 router.get('/create', function (req, res, next) {
       res.render('posts_create');
 });

@@ -6,3 +6,8 @@ a {
 #page-header{
   background-color: rgba(216, 93, 63, 0.87);
 }
+
+#post-segment{
+  margin-left: 5em;
+  margin-right: 5em;
+}

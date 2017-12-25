@@ -1,5 +1,5 @@
 <template>
-    <div class="ui sizer vertical segment">
+    <div id="post-segment" class="ui sizer vertical segment">
         <div class="ui huge header centered aligned">{{parsedPost.title}}</div>
         <div class="ui small header centered aligned">{{parsedPost.created_on | date}}</div>
         <div class="ui raised very padded segment">

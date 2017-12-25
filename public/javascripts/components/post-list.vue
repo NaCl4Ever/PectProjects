@@ -2,12 +2,23 @@
     <div class="ui three column grid">
         <div class ="column" v-for="post in parsedPosts">
             <div class="ui fluid centered card" >
+            <div class="image">
+                <img class="ui fluid image" src="/public/images/catError.jpg"/>
+            </div>
             <div class="centered content">
-                    <img class="ui fluid image" src="/public/images/catError.jpg"/>
-                    <div class="header">Title: {{post.title}}</div>
-                    <div class="header">  Created: {{ post['created_on'] | date}} </div>
+                    
+                    <div class="header">
+                        <div class="ui horizontal label">Title</div>
+                        {{post.title}}
+                        <div class="ui horizontal label">Date</div>
+                         {{ post['created_on'] | date}} 
+                    </div>
+                    <div class="header"> 
+                        
+                    </div>
                     <div class="description">
-                        {{post.contents}}
+                        <div class="ui horizontal label">Preview</div>
+                        {{post.contents | snip(10)}}
                     </div>
                 </div>
                 <a :href="'/posts/'+post.id">

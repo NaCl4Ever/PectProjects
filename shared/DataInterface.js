@@ -28,4 +28,12 @@ DataInterface.prototype.getPost = function (callback, postId) {
         callback(err, res);
     })
 }
+
+DataInterface.prototype.getLatest = function (callback) {
+    pool.query('SELECT * FROM posts ORDER BY created_on DESC LIMIT 1', (err, res) => {
+        console.log(err);
+        callback(err, res);
+    })
+}
+
 module.exports = DataInterface;
