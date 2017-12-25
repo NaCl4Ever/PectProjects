@@ -1,14 +1,26 @@
 <template>
-    <div>
-        <div class="ui relaxed divided list">
-            <div class="item" v-for="post in parsedPosts">
-                <i class="fa fa-handshake-o"></i>
-                <div class="content">
+    <div class="ui three column grid">
+        <div class ="column" v-for="post in parsedPosts">
+            <div class="ui fluid centered card" >
+            <div class="centered content">
+                    <img class="ui fluid image" src="/public/images/catError.jpg"/>
+                    <div class="header">Title: {{post.title}}</div>
+                    <div class="header">  Created: {{ post['created_on'] | date}} </div>
+                    <div class="description">
                         {{post.contents}}
+                    </div>
                 </div>
+                <a :href="'/posts/'+post.id">
+                    <div class="ui bottom attached button">
+                            <i class="fa fa-plus"></i>
+                            View Blog
+                    </div>
+                </a>
+                
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -23,6 +35,7 @@ module.exports = { // This is important, I got errors when using `export default
     },
     computed: {
         parsedPosts: function() {
+            console.dir(this.posts);
             return JSON.parse(this.posts);
         }
     },

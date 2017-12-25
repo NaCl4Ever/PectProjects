@@ -23,4 +23,9 @@ DataInterface.prototype.getPosts = function (callback, limit=10, offset=0 ) {
     })    
 }
 
+DataInterface.prototype.getPost = function (callback, postId) {
+    pool.query('SELECT * FROM posts where id =  $1', [postId], (err, res) => {
+        callback(err, res);
+    })
+}
 module.exports = DataInterface;
