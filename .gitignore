@@ -37,6 +37,8 @@ node_modules/
 jspm_packages/
 resources/
 public/assets/ 
+public/javasripts/bundle.js
+public/stylesheets/style.css
 # Typescript v1 declaration files
 typings/
 

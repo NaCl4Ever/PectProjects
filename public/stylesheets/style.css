@@ -1,13 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=PT+Mono|PT+Serif");
+@keyframes glow {
+  0% { }
+  to {
+    text-shadow: 4px 1px 3px #1fad04; } }
+
+.ui .header {
+  color: #12cc08 !important; }
+
+.ui .segment {
+  background: black;
+  color: #12cc08; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
-#page-header{
-  background-color: rgba(216, 93, 63, 0.87);
-}
+#page-header {
+  background-color: black;
+  font-family: "Arvo", serif; }
 
-#post-segment{
+#post-segment {
   margin-left: 5em;
   margin-right: 5em;
-}
+  font-family: "VT323", monospace;
+  color: #12cc08;
+  background: black; }
+  #post-segment div {
+    animation: 2s linear glow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; }

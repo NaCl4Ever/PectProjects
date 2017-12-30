@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono|PT+Serif');
+$headerFont: 'Arvo', serif;
+$mainFont: 'VT323', monospace;
+$primaryColor: #12cc08;
+$secondaryColor: black;
+$glow:  4px 1px 3px #1fad04;
+
+@keyframes glow {
+  0% {}
+  to {
+    text-shadow: $glow;
+  }
+}
+.ui{
+  .header{
+    color:$primaryColor !important;
+  }
+  .segment{
+    background: $secondaryColor;
+    color: $primaryColor;
+  }
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+#page-header{
+  background-color: $secondaryColor;
+  font-family: $headerFont;
+}
+
+#post-segment{
+  margin-left: 5em;
+  margin-right: 5em;
+  font-family: $mainFont;
+  color: $primaryColor;
+  background: $secondaryColor;
+  div{
+    animation: 2s linear glow;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+}
