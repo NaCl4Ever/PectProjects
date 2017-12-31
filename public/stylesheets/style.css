@@ -5,17 +5,21 @@
     text-shadow: 4px 1px 3px #1fad04; } }
 
 .ui .header {
-  color: #12cc08 !important; }
+  color: white !important; }
 
 .ui .segment {
   background: black;
   color: #12cc08; }
 
+#app {
+  background-color: #bdc3c7; }
+
 a {
   color: #00B7FF; }
 
 #page-header {
-  background-color: black;
+  background-color: #633974 !important;
+  color: white !important;
   font-family: "Arvo", serif; }
 
 #post-segment {
